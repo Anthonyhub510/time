@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/0f3cf4ca30.js" crossorigin="anonymous"></script>
+    <!-- css -->
+
+    <style>
+#time{
+    font-weight: 600;
+    font-size: 120px;
+    background: linear-gradient(to bottom,#3498db,#f1c40f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* font-size: 60px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+  font-size: 48px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5),
+               -2px -2px 5px rgba(255, 255, 255, 0.5);
+  color: #3498db;
+  font-size: 48px;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
+               0 0 20px rgba(255, 255, 255, 0.6),
+               0 0 30px rgba(255, 255, 255, 0.4);
+  color: #08f;
+  font-size: 48px;
+  animation: pulse 2s infinite;
+  color: #3498db; */
+
+
+}
+.timer{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+    </style>
+
+    <title>timer</title>
+</head>
+<body>
+<div class="timer">
+    <p id="time">
+        <i class="fa-regular fa-hourglass"></i>
+        <i class="fa-solid fa-clock"></i>
+        </p>
+</div>
+
+<!-- JavaScript -->
+
+    <script>
+const  timeElement = document.getElementById("time")
+    function updateTime () {
+    const now = new Date();
+    const hours = now.getHours()
+    const minutes = now.getMinutes()
+    const seconds = now.getSeconds()
+    const clockString = `${hours.toString().padStart(2,"0")}
+    : ${minutes.toString().padStart(2,"0")}:
+    ${seconds.toString().padStart(2,"0")}`
+    timeElement.innerHTML =clockString
+
+    };
+    updateTime()
+    setInterval(updateTime,1000)
+
+    </script>
+</body>
+</html>
